@@ -1,4 +1,5 @@
 git add .
 git commit -m 'xxxx'
 git push -u origin masteri
+git remote add origin git@github.com:LionYing/tools.git
 git config --global user.name lionying
