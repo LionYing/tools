@@ -1,0 +1,4 @@
+var s ="cookie";
+s.split('; ').forEach(function(cookie) {
+       document.cookie = cookie;
+});

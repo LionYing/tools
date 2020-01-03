@@ -1,0 +1,1 @@
+copy 1.jpg/b+1.asp/a asp.jpg
